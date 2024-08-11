@@ -1,7 +1,6 @@
 from Player import Player
 from Shop import Shop
 import random
-import math
 
 #Main class that handles all game logic.
 
@@ -70,7 +69,7 @@ def battle(player_one, player_two):
                 print(player_two_name + "'s " + player_two.units[i].name + " dealt " + str(player_two.units[i].true_damage) + 
                     " damage to " + player_one_name + "'s " + player_one_units[i].name)
                 if difference < 0:
-                    print(player_one_name + " took " + str(math.abs(difference)) + " damage! (" + str(player_one.health) + " health remaining)")
+                    print(player_one_name + " took " + str(abs(difference)) + " damage! (" + str(player_one.health) + " health remaining)")
                     player_one.health += difference
 
             for i in range(len(player_two.units)):
@@ -80,7 +79,7 @@ def battle(player_one, player_two):
                 print(player_one_name + "'s " + player_one_units[i].name + " dealt " + str(player_one_units[i].true_damage) + 
                     " damage to " + player_two_name + "'s " + player_two.units[i].name)
                 if difference < 0:
-                    print(player_two_name + " took " + str(math.abs(difference)) + " damage! (" + str(player_two.health) + " health remaining)")
+                    print(player_two_name + " took " + str(abs(difference)) + " damage! (" + str(player_two.health) + " health remaining)")
                     player_two.health += difference
 
     elif len(player_one.units) > len(player_two.units):
@@ -96,7 +95,7 @@ def battle(player_one, player_two):
                   " damage to " + player_one_name + "'s " + player_one_units[i].name)
             if difference < 0:
                 player_one.health += difference
-                print(player_one_name + " took " + str(math.abs(difference)) + " damage! (" + str(player_one.health) + " health remaining)")
+                print(player_one_name + " took " + str(abs(difference)) + " damage! (" + str(player_one.health) + " health remaining)")
 
         for i in range(len(player_two.units)):
             adjust_true_damage(player_one_units[i], player_two.units[i])
@@ -106,7 +105,7 @@ def battle(player_one, player_two):
                   " damage to " + player_two_name + "'s " + player_two.units[i].name)
             if difference < 0:
                 player_two.health += difference
-                print(player_two_name + " took " + str(math.abs(difference)) + " damage! (" + str(player_two.health) + " health remaining)")
+                print(player_two_name + " took " + str(abs(difference)) + " damage! (" + str(player_two.health) + " health remaining)")
             
         for unit in remaining_units:
             player_two.health -= unit.base_damage
@@ -125,7 +124,7 @@ def battle(player_one, player_two):
                   " damage to " + player_one_name + "'s " + player_one.units[i].name)
             if difference < 0:
                 player_one.health += difference
-                print(player_one_name + " took " + str(math.abs(difference)) + " damage! (" + str(player_one.health) + " health remaining)")
+                print(player_one_name + " took " + str(abs(difference)) + " damage! (" + str(player_one.health) + " health remaining)")
 
         for i in range(len(player_one.units)):
             adjust_true_damage(player_one.units[i], player_two_units[i])
@@ -135,7 +134,7 @@ def battle(player_one, player_two):
                   " damage to " + player_two_name + "'s " + player_two_units[i].name)
             if difference < 0:
                 player_two.health += difference
-                print(player_two_name + " took " + str(math.abs(difference)) + " damage! (" + str(player_two.health) + " health remaining)")
+                print(player_two_name + " took " + str(abs(difference)) + " damage! (" + str(player_two.health) + " health remaining)")
         
         for unit in remaining_units:
             player_one.health -= unit.base_damage
