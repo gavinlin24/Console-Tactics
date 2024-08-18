@@ -9,11 +9,11 @@ Minigame inspired by Riot Games' Teamfight Tactics.
 ### Instructions
 Make sure python is installed on your local machine.
 
-- Add **pandas**
+Add **pandas**
 ```
 pip install pandas --user
 ```
-- Run **Game.py**
+Run **Game.py**
 ```
 python Game.py
 ```
